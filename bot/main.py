@@ -17,7 +17,10 @@ from bot.handlers.question import (
     cancel_question,
 )
 from bot.handlers.admin import reply_command
+from warnings import filterwarnings
+from telegram.warnings import PTBUserWarning
 
+filterwarnings(action="ignore", message=r".*CallbackQueryHandler", category=PTBUserWarning)
 
 def main() -> None:
     app = ApplicationBuilder().token(BOT_TOKEN).build()
