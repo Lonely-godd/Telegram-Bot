@@ -101,20 +101,14 @@ async def menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
 
     if data == "faq_menu":
         await query.edit_message_text(
-            text=(
-                "❓ Часто задаваемые вопросы\n\n"
-                "Выберите нужную тему:"
-            ),
+            text="❓ Часто задаваемые вопросы\n\nВыберите нужную тему:",
             reply_markup=get_faq_menu_keyboard(),
         )
         return
 
     if data == "back_main":
         await query.edit_message_text(
-            text=(
-                "🇺🇦 Главное меню\n\n"
-                "Выберите нужный раздел:"
-            ),
+            text="🇺🇦 Главное меню\n\nВыберите нужный раздел:",
             reply_markup=get_main_menu_keyboard(),
         )
         return
@@ -141,18 +135,6 @@ async def menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
                 "- CAF\n"
                 "- France Travail\n"
                 "- CPAM\n\n"
-                "Пока это временная заглушка."
-            ),
-            reply_markup=get_main_menu_keyboard(),
-        )
-        return
-
-    if data == "ask_question":
-        await query.edit_message_text(
-            text=(
-                "📝 Написать свой вопрос\n\n"
-                "Здесь позже будет форма, через которую пользователь "
-                "сможет отправить свой вопрос.\n\n"
                 "Пока это временная заглушка."
             ),
             reply_markup=get_main_menu_keyboard(),

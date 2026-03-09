@@ -6,7 +6,7 @@ def get_main_menu_keyboard() -> InlineKeyboardMarkup:
         [InlineKeyboardButton("❓ Часто задаваемые вопросы", callback_data="faq_menu")],
         [InlineKeyboardButton("📅 Взять рандеву с ADN", callback_data="adn")],
         [InlineKeyboardButton("📍 Полезные адреса и контакты", callback_data="contacts")],
-        [InlineKeyboardButton("📝 Написать свой вопрос", callback_data="ask_question")],
+        [InlineKeyboardButton("🙋 Задать вопрос волонтёру", callback_data="ask_volunteer")],
         [InlineKeyboardButton("ℹ️ О боте", callback_data="about")],
     ]
     return InlineKeyboardMarkup(keyboard)
@@ -33,5 +33,12 @@ def get_back_to_faq_keyboard() -> InlineKeyboardMarkup:
     keyboard = [
         [InlineKeyboardButton("⬅️ Назад к FAQ", callback_data="faq_menu")],
         [InlineKeyboardButton("🏠 Главное меню", callback_data="back_main")],
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+
+def get_cancel_question_keyboard() -> InlineKeyboardMarkup:
+    keyboard = [
+        [InlineKeyboardButton("❌ Отмена", callback_data="cancel_question")],
     ]
     return InlineKeyboardMarkup(keyboard)
