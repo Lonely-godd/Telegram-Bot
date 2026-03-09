@@ -16,6 +16,7 @@ from bot.handlers.question import (
     receive_question,
     cancel_question,
 )
+from bot.handlers.admin import reply_command
 
 
 def main() -> None:
@@ -35,6 +36,7 @@ def main() -> None:
     )
 
     app.add_handler(CommandHandler("start", start_command))
+    app.add_handler(CommandHandler("reply", reply_command))
     app.add_handler(question_conversation)
     app.add_handler(CallbackQueryHandler(menu_callback))
 
