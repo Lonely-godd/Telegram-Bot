@@ -29,6 +29,9 @@ def main() -> None:
             ],
         },
         fallbacks=[CommandHandler("cancel", cancel_question)],
+        per_chat=True,
+        per_user=True,
+        per_message=False,
     )
 
     app.add_handler(CommandHandler("start", start_command))
