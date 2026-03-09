@@ -6,10 +6,6 @@ from telegram.ext import (
     MessageHandler,
     filters,
 )
-from warnings import filterwarnings
-from telegram.warnings import PTBUserWarning
-filterwarnings(action="ignore", message=r".*CallbackQueryHandler", category=PTBUserWarning)
-
 from bot.config import BOT_TOKEN
 from bot.handlers.start import start_command
 from bot.handlers.faq import menu_callback
@@ -20,6 +16,10 @@ from bot.handlers.question import (
     cancel_question,
 )
 from bot.handlers.admin import reply_command
+
+from warnings import filterwarnings
+from telegram.warnings import PTBUserWarning
+filterwarnings(action="ignore", message=r".*CallbackQueryHandler", category=PTBUserWarning)
 
 
 def main() -> None:
