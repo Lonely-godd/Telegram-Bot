@@ -42,3 +42,11 @@ def get_cancel_question_keyboard() -> InlineKeyboardMarkup:
         [InlineKeyboardButton("❌ Отмена", callback_data="cancel_question")],
     ]
     return InlineKeyboardMarkup(keyboard)
+
+
+def get_language_keyboard() -> InlineKeyboardMarkup:
+    keyboard = [
+        [InlineKeyboardButton("Русский", callback_data = "set_lang_ru")],
+        [InlineKeyboardButton("Українська", callback_data = "set_lang_ua")],
+    ]
+    return InlineKeyboardMarkup(keyboard)
