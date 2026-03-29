@@ -1,6 +1,6 @@
 from telegram import Update
 from telegram.ext import ContextTypes
-
+from bot.texts import *
 from bot.config import ADMIN_CHAT_ID
 
 
@@ -29,7 +29,7 @@ async def reply_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
         await context.bot.send_message(
             chat_id=user_id,
             text=(
-                "🙋 Ответ от волонтёра\n\n"
+                f"🙋 {TEXTS["ru"]["messages"]["volunteer_response"]} \n\n"
                 f"{reply_text}"
             ),
         )
