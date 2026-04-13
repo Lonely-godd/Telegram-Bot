@@ -20,10 +20,13 @@ from bot.handlers.admin import reply_command
 
 from warnings import filterwarnings
 from telegram.warnings import PTBUserWarning
+from bot.db import init_db, check
 filterwarnings(action="ignore", message=r".*CallbackQueryHandler", category=PTBUserWarning)
 
 
 def main() -> None:
+    init_db()
+    check()
     app = ApplicationBuilder().token(BOT_TOKEN).build()
 
     question_conversation = ConversationHandler(
