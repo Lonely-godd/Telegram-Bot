@@ -6,7 +6,6 @@ from telegram.ext import (
     MessageHandler,
     filters,
 )
-
 from bot.config import BOT_TOKEN
 from bot.handlers.start import start_command
 from bot.handlers.faq import menu_callback
@@ -18,6 +17,7 @@ from bot.handlers.question import (
 )
 from bot.handlers.language import language_callback
 from bot.handlers.admin import reply_command
+
 from warnings import filterwarnings
 from telegram.warnings import PTBUserWarning
 from bot.db import init_db, check
