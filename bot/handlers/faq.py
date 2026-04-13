@@ -95,7 +95,11 @@ FAQ_TEXTS = {
 
 async def menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query
-    await query.answer()
+
+    try:
+        await query.answer()
+    except Exception:
+        pass
 
     data = query.data
 
