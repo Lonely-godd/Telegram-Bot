@@ -1,6 +1,6 @@
 from telegram import Update, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
-from texts import TEXTS
+from bot.texts import TEXTS
 from bot.keyboards.menu import get_main_menu_keyboard, get_language_keyboard
 from bot.helpers import extract_user_data, t
 
