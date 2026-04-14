@@ -1,11 +1,10 @@
-using System;
 using System.Windows.Forms;
 
 namespace BotConfigurator
 {
     static class Program
     {
-        [STAThread]
+        [System.STAThread]
         static void Main()
         {
             Application.SetHighDpiMode(HighDpiMode.SystemAware);

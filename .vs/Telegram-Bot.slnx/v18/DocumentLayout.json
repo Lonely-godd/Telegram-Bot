@@ -1,0 +1,360 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Dmytro\\Documents\\Telegram-Bot\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\MainForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App\\App\\BotConfigurator\\MainForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Theme.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App\\App\\BotConfigurator\\Theme.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Helpers\\UiHelpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App\\App\\BotConfigurator\\Helpers\\UiHelpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Controls\\LanguageCardControl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App\\App\\BotConfigurator\\Controls\\LanguageCardControl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Controls\\EditorControl.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App\\App\\BotConfigurator\\Controls\\EditorControl.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Controls\\SidebarControl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App\\App\\BotConfigurator\\Controls\\SidebarControl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Models\\BotConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App\\App\\BotConfigurator\\Models\\BotConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App\\App\\BotConfigurator\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\BotConfigurator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App\\App\\BotConfigurator\\BotConfigurator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\keyboards\\service_account.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bot\\keyboards\\service_account.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\start.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bot\\handlers\\start.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\language.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bot\\handlers\\language.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\main.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bot\\main.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\texts.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bot\\texts.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\config.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bot\\config.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\keyboards\\menu.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bot\\keyboards\\menu.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\helpers.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bot\\helpers.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\faq.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bot\\handlers\\faq.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\question.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bot\\handlers\\question.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\admin.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bot\\handlers\\admin.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EditorControl.cs",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Controls\\EditorControl.cs",
+              "RelativeDocumentMoniker": "App\\App\\BotConfigurator\\Controls\\EditorControl.cs",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Controls\\EditorControl.cs",
+              "RelativeToolTip": "App\\App\\BotConfigurator\\Controls\\EditorControl.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAowFsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T17:41:33.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UiHelpers.cs",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Helpers\\UiHelpers.cs",
+              "RelativeDocumentMoniker": "App\\App\\BotConfigurator\\Helpers\\UiHelpers.cs",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Helpers\\UiHelpers.cs",
+              "RelativeToolTip": "App\\App\\BotConfigurator\\Helpers\\UiHelpers.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAowC4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:07:04.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SidebarControl.cs",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Controls\\SidebarControl.cs",
+              "RelativeDocumentMoniker": "App\\App\\BotConfigurator\\Controls\\SidebarControl.cs",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Controls\\SidebarControl.cs",
+              "RelativeToolTip": "App\\App\\BotConfigurator\\Controls\\SidebarControl.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAqwE8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:06:22.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LanguageCardControl.cs",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Controls\\LanguageCardControl.cs",
+              "RelativeDocumentMoniker": "App\\App\\BotConfigurator\\Controls\\LanguageCardControl.cs",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Controls\\LanguageCardControl.cs",
+              "RelativeToolTip": "App\\App\\BotConfigurator\\Controls\\LanguageCardControl.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:06:14.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BotConfig.cs",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Models\\BotConfig.cs",
+              "RelativeDocumentMoniker": "App\\App\\BotConfigurator\\Models\\BotConfig.cs",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Models\\BotConfig.cs",
+              "RelativeToolTip": "App\\App\\BotConfigurator\\Models\\BotConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:05:48.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Theme.cs",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Theme.cs",
+              "RelativeDocumentMoniker": "App\\App\\BotConfigurator\\Theme.cs",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Theme.cs",
+              "RelativeToolTip": "App\\App\\BotConfigurator\\Theme.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAowB0AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T12:52:11.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BotConfigurator.csproj",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\BotConfigurator.csproj",
+              "RelativeDocumentMoniker": "App\\App\\BotConfigurator\\BotConfigurator.csproj",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\BotConfigurator.csproj",
+              "RelativeToolTip": "App\\App\\BotConfigurator\\BotConfigurator.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAUwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-14T12:01:33.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Program.cs",
+              "RelativeDocumentMoniker": "App\\App\\BotConfigurator\\Program.cs",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\Program.cs",
+              "RelativeToolTip": "App\\App\\BotConfigurator\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T12:01:26.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\MainForm.cs",
+              "RelativeDocumentMoniker": "App\\App\\BotConfigurator\\MainForm.cs",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\App\\App\\BotConfigurator\\MainForm.cs",
+              "RelativeToolTip": "App\\App\\BotConfigurator\\MainForm.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAtwIwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T11:59:50.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "service_account.json",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\keyboards\\service_account.json",
+              "RelativeDocumentMoniker": "bot\\keyboards\\service_account.json",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\keyboards\\service_account.json",
+              "RelativeToolTip": "bot\\keyboards\\service_account.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-14T11:50:31.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "config.py",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\config.py",
+              "RelativeDocumentMoniker": "bot\\config.py",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\config.py",
+              "RelativeToolTip": "bot\\config.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-14T11:18:02.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "texts.py",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\texts.py",
+              "RelativeDocumentMoniker": "bot\\texts.py",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\texts.py",
+              "RelativeToolTip": "bot\\texts.py",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAUwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-14T11:17:04.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "menu.py",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\keyboards\\menu.py",
+              "RelativeDocumentMoniker": "bot\\keyboards\\menu.py",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\keyboards\\menu.py",
+              "RelativeToolTip": "bot\\keyboards\\menu.py",
+              "ViewState": "AgIAABcAAAAAAAAAAAAUwDMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-14T11:16:49.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "faq.py",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\faq.py",
+              "RelativeDocumentMoniker": "bot\\handlers\\faq.py",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\faq.py",
+              "RelativeToolTip": "bot\\handlers\\faq.py",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAUwKQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-14T11:04:16.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "language.py",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\language.py",
+              "RelativeDocumentMoniker": "bot\\handlers\\language.py",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\language.py",
+              "RelativeToolTip": "bot\\handlers\\language.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-14T11:03:42.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "question.py",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\question.py",
+              "RelativeDocumentMoniker": "bot\\handlers\\question.py",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\question.py",
+              "RelativeToolTip": "bot\\handlers\\question.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-14T10:47:52.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "start.py",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\start.py",
+              "RelativeDocumentMoniker": "bot\\handlers\\start.py",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\start.py",
+              "RelativeToolTip": "bot\\handlers\\start.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-14T10:47:43.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "admin.py",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\admin.py",
+              "RelativeDocumentMoniker": "bot\\handlers\\admin.py",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\handlers\\admin.py",
+              "RelativeToolTip": "bot\\handlers\\admin.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-14T10:47:42.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "helpers.py",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\helpers.py",
+              "RelativeDocumentMoniker": "bot\\helpers.py",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\helpers.py",
+              "RelativeToolTip": "bot\\helpers.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-14T08:23:18.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "main.py",
+              "DocumentMoniker": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\main.py",
+              "RelativeDocumentMoniker": "bot\\main.py",
+              "ToolTip": "D:\\Dmytro\\Documents\\Telegram-Bot\\bot\\main.py",
+              "RelativeToolTip": "bot\\main.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-14T08:23:14.371Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,156 +1,321 @@
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Security.Cryptography;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
 namespace BotConfigurator
 {
-    public partial class MainForm : Form
+    public class MainForm : Form
     {
-        private TreeView treeView; 
-        private TextBox txtTitleRu, txtTitleUa, txtContentRu, txtContentUa;
-        private Button btnAddRoot, btnAddSub, btnDelete, btnExport, btnSaveChanges;
-        private BotSection selectedSection;
+        private SidebarControl _sidebar;
+        private EditorControl _editor;
+        private Panel _emptyState;
+        private SplitContainer _split;
+        private TreeView _tree;
+        private BotSection _current;
 
         public MainForm()
         {
-            this.Text = "Telegram Bot Configurator (Visual Editor)";
-            this.Size = new Size(1000, 700);
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Font = new Font("Segoe UI", 10);
+            Text = "Bot Configurator";
+            Size = new Size(1120, 740);
+            MinimumSize = new Size(920, 620);
+            StartPosition = FormStartPosition.CenterScreen;
+            BackColor = Theme.PageBg;
+            Font = Theme.FontBase;
+            DoubleBuffered = true;
 
-            InitializeLayout();
+            BuildLayout();
+            WireEvents();
         }
 
-        private void InitializeLayout()
+        private void BuildLayout()
         {
-            TableLayoutPanel mainLayout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 2 };
-            mainLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35));
-            mainLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65));
+            Controls.Add(BuildHeader());
+            Controls.Add(BuildBottomBar());
 
-            // Left Side: Tree & Buttons
-            Panel leftPanel = new Panel { Dock = DockStyle.Fill, Padding = new Padding(10) };
-            treeView = new TreeView { Dock = DockStyle.Fill, ShowLines = true, ShowPlusMinus = true };
-            treeView.AfterSelect += TreeView_AfterSelect;
-            treeView.BeforeSelect += TreeView_BeforeSelect;
+            _split = new SplitContainer
+            {
+                Dock = DockStyle.Fill,
+                Orientation = Orientation.Vertical,
+                SplitterWidth = 1,
+                SplitterDistance = 340,  
+                BackColor = Color.FromArgb(45, 45, 58)
+            };
 
-            FlowLayoutPanel buttonPanel = new FlowLayoutPanel { Dock = DockStyle.Bottom, Height = 100 };
-            btnAddRoot = new Button { Text = "Добавить раздел", Size = new Size(140, 35) };
-            btnAddSub = new Button { Text = "Добавить подраздел", Size = new Size(140, 35) };
-            btnDelete = new Button { Text = "Удалить", Size = new Size(140, 35), ForeColor = Color.Red };
-            btnSaveChanges = new Button { Text = "Сохранить изменение", Size = new Size(140, 35) };
+            _sidebar = new SidebarControl();
+            _split.Panel1.Controls.Add(_sidebar);
+            _tree = _sidebar.Tree;
 
-            btnAddRoot.Click += (s, e) => AddSection(null);
-            btnAddSub.Click += (s, e) => { if (treeView.SelectedNode != null) AddSection(treeView.SelectedNode); };
-            btnDelete.Click += (s, e) => { if (treeView.SelectedNode != null) { treeView.SelectedNode.Remove(); selectedSection = null; ClearFields(); } };
+            var workspace = new Panel
+            {
+                Dock = DockStyle.Fill,
+                BackColor = Theme.PageBg,
+                Padding = new Padding(40, 32, 40, 24) 
+            };
 
-            buttonPanel.Controls.AddRange(new Control[] { btnAddRoot, btnAddSub, btnDelete, btnSaveChanges });
-            leftPanel.Controls.Add(treeView);
-            leftPanel.Controls.Add(buttonPanel);
+            _emptyState = BuildEmptyState();
+            _editor = new EditorControl();
+            _editor.Visible = false;
 
-            // Right Side: Editor
-            Panel rightPanel = new Panel { Dock = DockStyle.Fill, Padding = new Padding(20) };
-            Label lblRu = new Label { Text = "РУССКИЙ ЯЗЫК", Font = new Font("Segoe UI", 12, FontStyle.Bold), Dock = DockStyle.Top, Height = 30 };
-            txtTitleRu = new TextBox { Dock = DockStyle.Top, PlaceholderText = "Заголовок (RU)" };
-            txtContentRu = new TextBox { Dock = DockStyle.Top, Multiline = true, Height = 100, PlaceholderText = "Текст сообщения (RU)" };
-            
-            Label lblUa = new Label { Text = "УКРАЇНСЬКА МОВА", Font = new Font("Segoe UI", 12, FontStyle.Bold), Dock = DockStyle.Top, Height = 30, Margin = new Padding(0, 20, 0, 0) };
-            txtTitleUa = new TextBox { Dock = DockStyle.Top, PlaceholderText = "Заголовок (UA)" };
-            txtContentUa = new TextBox { Dock = DockStyle.Top, Multiline = true, Height = 100, PlaceholderText = "Текст повідомлення (UA)" };
+            workspace.Controls.Add(_editor);
+            workspace.Controls.Add(_emptyState);
 
-            btnExport = new Button { Text = "ЭКСПОРТ В JSON", Dock = DockStyle.Bottom, Height = 50, BackColor = Color.LightGreen, Font = new Font("Segoe UI", 10, FontStyle.Bold) };
-            btnExport.Click += BtnExport_Click;
+            _split.Panel2.Controls.Add(workspace);
+            Controls.Add(_split);
+        }
+        private Panel BuildHeader()
+        {
+            var header = new Panel
+            {
+                Dock = DockStyle.Top,
+                Height = 82,                        
+                BackColor = Theme.HeaderBg
+            };
 
-            // Update events
-            btnSaveChanges.Click += SyncData;
+            var menu = new MenuStrip
+            {
+                BackColor = Theme.HeaderBg,
+                ForeColor = Color.White,
+                Dock = DockStyle.Top
+            };
+            var fileMenu = new ToolStripMenuItem("Файл");
+            fileMenu.DropDownItems.Add("Новый проект", null, (_, _) => NewProject());
+            fileMenu.DropDownItems.Add("Открыть JSON...", null, (_, _) => OpenJson());
+            fileMenu.DropDownItems.Add("Экспортировать JSON", null, (_, _) => ExportJson());
+            menu.Items.Add(fileMenu);
+            header.Controls.Add(menu);
 
-            rightPanel.Controls.Add(txtContentUa);
-            rightPanel.Controls.Add(new Control { Height = 10, Dock = DockStyle.Top });
-            rightPanel.Controls.Add(txtTitleUa);
-            rightPanel.Controls.Add(lblUa);
-            rightPanel.Controls.Add(new Control { Height = 30, Dock = DockStyle.Top });
-            rightPanel.Controls.Add(txtContentRu);
-            rightPanel.Controls.Add(new Control { Height = 10, Dock = DockStyle.Top });
-            rightPanel.Controls.Add(txtTitleRu);
-            rightPanel.Controls.Add(lblRu);
-            rightPanel.Controls.Add(btnExport);
+            header.Controls.Add(new Label
+            {
+                Text = "⚙",
+                Font = new Font("Segoe UI", 16f),
+                ForeColor = Theme.Accent,
+                AutoSize = true,
+                Location = new Point(20, 32)
+            });
+            header.Controls.Add(new Label
+            {
+                Text = "Bot Configurator",
+                Font = Theme.FontAppTitle,
+                ForeColor = Color.White,
+                AutoSize = true,
+                Location = new Point(46, 35)
+            });
+            header.Controls.Add(new Label
+            {
+                Text = "Telegram · Visual Editor",
+                Font = Theme.FontSmall,
+                ForeColor = Theme.SidebarMuted,
+                AutoSize = true,
+                Location = new Point(48, 53)
+            });
 
-            mainLayout.Controls.Add(leftPanel, 0, 0);
-            mainLayout.Controls.Add(rightPanel, 1, 0);
-            this.Controls.Add(mainLayout);
+            return header;
         }
 
-        private void AddSection(TreeNode parent)
+        private Panel BuildEmptyState()
+        {
+            var panel = new Panel { Dock = DockStyle.Fill, BackColor = Theme.PageBg };
+            panel.Controls.Add(new Label
+            {
+                Text = "📂",
+                Font = new Font("Segoe UI", 48f),
+                TextAlign = ContentAlignment.MiddleCenter,
+                Dock = DockStyle.Fill,
+                ForeColor = Theme.TextMuted
+            });
+            panel.Controls.Add(new Label
+            {
+                Text = "Выберите раздел или создайте новый",
+                Font = new Font("Segoe UI", 13f),
+                ForeColor = Theme.TextMuted,
+                TextAlign = ContentAlignment.TopCenter,
+                Dock = DockStyle.Bottom,
+                Height = 220
+            });
+            return panel;
+        }
+        private Panel BuildBottomBar()
+        {
+            var bar = new Panel
+            {
+                Dock = DockStyle.Bottom,
+                Height = 68, 
+                BackColor = Theme.Surface,
+                Padding = new Padding(32, 12, 32, 12)
+            };
+
+            bar.Paint += (s, e) =>
+            {
+                using var pen = new Pen(Theme.Border);
+                e.Graphics.DrawLine(pen, 0, 0, bar.Width, 0);
+            };
+            var btnExport = new Button
+            {
+                Text = "⬇ ЭКСПОРТИРОВАТЬ JSON",
+                Font = Theme.FontButton,
+                ForeColor = Color.White,
+                BackColor = Theme.Success,
+                FlatStyle = FlatStyle.Flat,
+                Size = new Size(240, 42),
+                Anchor = AnchorStyles.Right | AnchorStyles.Top,
+                Cursor = Cursors.Hand
+            };
+            btnExport.FlatAppearance.BorderSize = 0;
+            btnExport.FlatAppearance.MouseOverBackColor = Theme.SuccessDark;
+            btnExport.Location = new Point(bar.ClientSize.Width - 264, 10);
+            btnExport.Anchor = AnchorStyles.Right | AnchorStyles.Top;
+            btnExport.Click += (_, _) => ExportJson();
+            var statusLbl = new Label
+            {
+                Text = "Готов к работе",
+                Font = Theme.FontSmall,
+                ForeColor = Theme.TextMuted,
+                AutoSize = true,
+                Location = new Point(0, 22)
+            };
+            bar.Controls.Add(btnExport);
+            bar.Controls.Add(statusLbl);
+            return bar;
+        }
+
+        private void WireEvents()
+        {
+            _sidebar.AddRootClicked += (_, _) => AddNode(null);
+            _sidebar.AddSubClicked += (_, _) => { if (_tree.SelectedNode != null) AddNode(_tree.SelectedNode); };
+            _sidebar.DeleteClicked += (_, _) => DeleteSelected();
+
+            _editor.SaveClicked += (_, _) => SaveCurrent();
+            _tree.AfterSelect += Tree_AfterSelect;
+
+            _tree.ItemDrag += (_, e) => _tree.DoDragDrop(e.Item, DragDropEffects.Move);
+            _tree.DragEnter += (_, e) => e.Effect = DragDropEffects.Move;
+            _tree.DragDrop += Tree_DragDrop;
+        }
+
+        private void Tree_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            _current = (BotSection)e.Node.Tag;
+            _editor.LoadSection(_current);
+            _editor.SectionPath.Text = UiHelpers.BuildPath(e.Node);
+            _emptyState.Visible = false;
+            _editor.Visible = true;
+        }
+
+        private void Tree_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetData(typeof(TreeNode)) is not TreeNode dragged) return;
+            var target = _tree.GetNodeAt(_tree.PointToClient(new Point(e.X, e.Y)));
+            if (target == null || target == dragged) return;
+            dragged.Remove();
+            if (target.Nodes.Count == 0 && target.Level > 0)
+                target.Nodes.Add(dragged);
+            else
+            {
+                target.Nodes.Add(dragged);
+                target.Expand();
+            }
+            _tree.SelectedNode = dragged;
+        }
+
+        private void AddNode(TreeNode parent)
         {
             var section = new BotSection();
-            TreeNode node = new TreeNode("Новый раздел") { Tag = section };
-            if (parent == null) treeView.Nodes.Add(node);
-            else parent.Nodes.Add(node);
-            treeView.SelectedNode = node;
-            node.Expand();
+            var node = new TreeNode("Новый раздел") { Tag = section };
+            if (parent == null)
+                _tree.Nodes.Add(node);
+            else
+            {
+                parent.Nodes.Add(node);
+                parent.Expand();
+            }
+            _tree.SelectedNode = node;
         }
 
-        private void TreeView_BeforeSelect(object sender, TreeViewCancelEventArgs e)
+        private void DeleteSelected()
         {
-            if(treeView.SelectedNode != null)
-                treeView.SelectedNode.BackColor = Color.Empty;
+            if (_tree.SelectedNode == null) return;
+            var msg = $"Удалить «{_tree.SelectedNode.Text}»?";
+            if (MessageBox.Show(msg, "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
+            _tree.SelectedNode.Remove();
+            _current = null;
+            _editor.Visible = false;
+            _emptyState.Visible = true;
+            _editor.Clear();
         }
 
-        private void TreeView_AfterSelect(object sender, TreeViewEventArgs e)
+        private void SaveCurrent()
         {
-            selectedSection = (BotSection)e.Node.Tag;
-            txtTitleRu.Text = selectedSection.Titles["ru"];
-            txtTitleUa.Text = selectedSection.Titles["ua"];
-            txtContentRu.Text = selectedSection.Content["ru"];
-            txtContentUa.Text = selectedSection.Content["ua"];
-            treeView.SelectedNode.BackColor = Color.AliceBlue;
+            if (_current == null) return;
+            _editor.SaveToSection(_current);
+            if (_tree.SelectedNode != null)
+                _tree.SelectedNode.Text = string.IsNullOrWhiteSpace(_current.Titles["ru"]) ? "Новый раздел" : _current.Titles["ru"];
         }
 
-        private void SyncData(object sender, EventArgs e)
+        private void NewProject()
         {
-            if (selectedSection == null) return;
-            selectedSection.Titles["ru"] = txtTitleRu.Text;
-            selectedSection.Titles["ua"] = txtTitleUa.Text;
-            selectedSection.Content["ru"] = txtContentRu.Text;
-            selectedSection.Content["ua"] = txtContentUa.Text;
-            if (treeView.SelectedNode != null)
-                treeView.SelectedNode.Text = string.IsNullOrWhiteSpace(txtTitleRu.Text) ? "Новый раздел" : txtTitleRu.Text;
+            _tree.Nodes.Clear();
+            _current = null;
+            _editor.Visible = false;
+            _emptyState.Visible = true;
+            _editor.Clear();
         }
 
-        private void ClearFields()
+        private void OpenJson()
         {
-            txtTitleRu.Clear(); txtTitleUa.Clear(); txtContentRu.Clear(); txtContentUa.Clear();
+            using var ofd = new OpenFileDialog
+            {
+                Title = "Открыть конфигурацию",
+                Filter = "JSON-файл (*.json)|*.json"
+            };
+            if (ofd.ShowDialog() != DialogResult.OK) return;
+            var json = File.ReadAllText(ofd.FileName);
+            var config = JsonConvert.DeserializeObject<BotConfig>(json);
+            _tree.Nodes.Clear();
+            foreach (var section in config.Sections)
+                AddSectionToTree(section, null);
+            _current = null;
+            _editor.Visible = false;
+            _emptyState.Visible = true;
+            _editor.Clear();
         }
 
-        private void BtnExport_Click(object sender, EventArgs e)
+        private void AddSectionToTree(BotSection section, TreeNode parent)
         {
+            var node = new TreeNode(section.ToString()) { Tag = section };
+            if (parent == null)
+                _tree.Nodes.Add(node);
+            else
+                parent.Nodes.Add(node);
+            foreach (var sub in section.SubSections)
+                AddSectionToTree(sub, node);
+        }
+
+        private void ExportJson()
+        {
+            if (_editor.Visible) SaveCurrent();
             var config = new BotConfig();
-            foreach (TreeNode node in treeView.Nodes)
+            foreach (TreeNode node in _tree.Nodes)
+                config.Sections.Add(CollectSection(node));
+            var json = JsonConvert.SerializeObject(config, Formatting.Indented);
+            using var sfd = new SaveFileDialog
             {
-                config.Sections.Add(MapNodeToSection(node));
-            }
-
-            string json = JsonConvert.SerializeObject(config, Formatting.Indented);
-            
-            SaveFileDialog sfd = new SaveFileDialog { Filter = "JSON files (*.json)|*.json", FileName = "bot_config.json" };
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                File.WriteAllText(sfd.FileName, json);
-                MessageBox.Show("Конфигурация успешно сохранена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+                Title = "Сохранить конфигурацию",
+                Filter = "JSON-файл (*.json)|*.json",
+                FileName = "bot_config.json"
+            };
+            if (sfd.ShowDialog() != DialogResult.OK) return;
+            File.WriteAllText(sfd.FileName, json);
+            MessageBox.Show("Конфигурация успешно экспортирована!", "Готово", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private BotSection MapNodeToSection(TreeNode node)
+        private static BotSection CollectSection(TreeNode node)
         {
             var section = (BotSection)node.Tag;
             section.SubSections.Clear();
             foreach (TreeNode child in node.Nodes)
-            {
-                section.SubSections.Add(MapNodeToSection(child));
-            }
+                section.SubSections.Add(CollectSection(child));
             return section;
         }
     }

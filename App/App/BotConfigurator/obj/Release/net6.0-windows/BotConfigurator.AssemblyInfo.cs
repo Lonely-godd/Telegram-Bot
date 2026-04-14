@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BotConfigurator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f75bbcf5824315d8b928e3d9a3371e30df22181")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea679beabc606424ac0f1811fc019ecd342a1a44")]
 [assembly: System.Reflection.AssemblyProductAttribute("BotConfigurator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BotConfigurator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
